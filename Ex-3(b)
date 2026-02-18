@@ -1,0 +1,28 @@
+import numpy as np
+from statistics import mode
+
+# Sample dataset
+data = [5, 10, 15, 20, 25, 30, 35, 40, 40]
+
+# Mean
+mean_val = np.mean(data)
+
+# Median
+median_val = np.median(data)
+
+# Mode
+mode_val = mode(data)
+
+# Print results
+print("Data:", data)
+print("Mean:", mean_val)
+print("Median:", median_val)
+print("Mode:", mode_val)
+
+
+
+output:
+Data: [5, 10, 15, 20, 25, 30, 35, 40, 40]
+Mean: 24.444444444444443
+Median: 25.0
+Mode: 40
