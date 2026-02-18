@@ -1,0 +1,75 @@
+import pandas as pd
+
+# 1. Create a DataFrame from a dictionary
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Age': [24, 27, 22, 32, 29],
+    'Department': ['HR', 'Finance', 'IT', 'IT', 'Finance'],
+    'Salary': [40000, 50000, 42000, 60000, 52000]
+}
+
+df = pd.DataFrame(data)
+
+# 2. Display the DataFrame
+print("Original DataFrame:")
+print(df)
+
+# 3. Basic exploration
+print("\nDataFrame Info:")
+print(df.info())
+
+print("\nSummary Statistics:")
+print(df.describe())
+
+# 4. Selecting columns
+print("\nSelect 'Name' column:")
+print(df['Name'])
+
+# 5. Filtering rows
+print("\nEmployees with Salary > 45000:")
+print(df[df['Salary'] > 45000])
+
+# 6. Adding a new column
+df['Bonus'] = df['Salary'] * 0.10
+print("\nDataFrame with Bonus column:")
+print(df)
+
+# 7. Grouping data
+print("\nAverage Salary by Department:")
+print(df.groupby('Department')['Salary'].mean())
+
+# 8. Sorting data
+print("\nDataFrame sorted by Age:")
+print(df.sort_values(by='Age'))
+
+
+
+Output:
+Original DataFrame:
+      Name  Age Department  Salary
+0    Alice   24        HR   40000
+1      Bob   27   Finance   50000
+2  Charlie   22        IT   42000
+3    David   32        IT   60000
+4      Eva   29   Finance   52000
+
+Employees with Salary > 45000:
+   Name  Age Department  Salary
+1   Bob   27   Finance   50000
+3 David   32        IT   60000
+4   Eva   29   Finance   52000
+
+DataFrame with Bonus column:
+      Name  Age Department  Salary   Bonus
+0    Alice   24        HR   40000  4000.0
+1      Bob   27   Finance   50000  5000.0
+2  Charlie   22        IT   42000  4200.0
+3    David   32        IT   60000  6000.0
+4      Eva   29   Finance   52000  5200.0
+
+Average Salary by Department:
+Department
+Finance    51000.0
+HR         40000.0
+IT         51000.0
+Name: Salary, dtype: float64
