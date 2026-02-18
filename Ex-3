@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random dataset (values between 1 and 9)
+data = np.random.randint(1, 10, 50)
+
+# Frequency table
+unique, counts = np.unique(data, return_counts=True)
+freq_table = dict(zip(unique, counts))
+print("Frequency Distribution Table:")
+for val, freq in freq_table.items():
+    print(f"Value {val}: {freq} times")
+
+# Plot frequency distribution (histogram)
+plt.hist(data, bins=9, edgecolor='black', color='skyblue')
+plt.title("Frequency Distribution")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.show()
+
+
+
+
+
+output:
+Frequency Distribution Table:
+Value 1: 7 times
+Value 2: 4 times
+Value 3: 6 times
+Value 4: 5 times
+Value 5: 8 times
+Value 6: 3 times
+Value 7: 6 times
+Value 8: 5 times
+Value 9: 6 times
