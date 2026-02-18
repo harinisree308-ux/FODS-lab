@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Line Plot
+plt.plot([1,2,3,4],[1,4,9,16]); plt.show()
+
+# Bar Plot
+plt.bar(['A','B','C'], [3,7,5]); plt.show()
+
+# Scatter Plot
+plt.scatter([5,7,8],[99,86,87]); plt.show()
+
+# Histogram
+plt.hist(np.random.randn(1000), bins=30); plt.show()
+
+# Pie Chart
+plt.pie([15,30,45,10], labels=['Apples','Bananas','Cherries','Dates']); plt.show()
